@@ -6,22 +6,21 @@
 //     });
 // }
 
+// const pkmn = "mewtwo";
+// async function getPkmn (){
+//     try{
+//         const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pkmn}`);
+//         const data = await result.json();
+//         console.log(data);
+//     } 
+//         catch (error) {
+//             console.log(error);
+//             alert("did u mean mudkip?");
+//         }
+// }
+// getPkmn();
 
-const pkmn = "mewtwo";
-async function getPkmn (){
-    try{
-        const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pkmn}`);
-        const data = await result.json();
-        console.log(data);
-    } 
-        catch (error) {
-            console.log(error);
-            alert("did u mean mudkip?");
-        }
-}
-getPkmn();
-
-
+import { genres } from "./genres";
 
 const DOMSelectors = {
     grid: document.querySelector(".movie-grid"),
@@ -66,4 +65,5 @@ const init = async function (){
     }
 }
 
+const genreArr = 
 init();
