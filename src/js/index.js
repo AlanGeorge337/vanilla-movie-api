@@ -56,9 +56,7 @@ const init = async function (){
               </div>
     
               <div class="movie-genres">
-                <div>
-                    
-                </div> 
+                <div>${genreArr}</div> 
               </div>
             </div>
           </div>`)
