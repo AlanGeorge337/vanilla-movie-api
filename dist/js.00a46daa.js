@@ -186,7 +186,7 @@ exports.genres = genres;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
-var _genres = require("./genres");
+var _genres = require("./genres.js");
 
 // function getPkmn(){
 //     fetch(`https://pokeapi.co/api/v2/pokemon/mudkip`).then((result) => {
@@ -219,6 +219,8 @@ const init = async function init() {
     const response = await fetch(query);
     const data = await response.json();
     data.results.forEach(movie => {
+      const genreArr = _genres.genres.forEach.filter(element => {});
+
       DOMSelectors.grid.insertAdjacentHTML("beforeend", "<div class=\"movie-card\">\n            <div class=\"movie-card-front\">\n              <img\n                src=\"https://image.tmdb.org/t/p/w500/poster_path\"\n                alt=\"\"\n                class=\"poster\"\n              />\n            </div>\n            <div class=\"movie-card-back\">\n              <h3 class=\"movie-card-header\">".concat(movie.original_title, "</h3>\n              <div class=\"score-box\">\n                <p class=\"user-score\">Community Score</p>\n                <p class=\"user-score\">").concat(movie.vote_average, "</p>\n              </div>\n    \n              <div class=\"release-box\">\n                <p class=\"release-date\">Released</p>\n                <p class=\"release-date\">").concat(movie.release_date, "</p>\n              </div>\n    \n              <div class=\"movie-genres\">\n                <div>").concat(genreArr, "</div> \n              </div>\n            </div>\n          </div>"));
     });
   } catch (error) {
@@ -226,8 +228,8 @@ const init = async function init() {
   }
 };
 
-const genreArr = init();
-},{"./genres":"js/genres.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+init();
+},{"./genres.js":"js/genres.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

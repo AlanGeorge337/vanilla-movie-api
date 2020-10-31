@@ -20,7 +20,7 @@
 // }
 // getPkmn();
 
-import { genres } from "./genres";
+import { genres } from "./genres.js";
 
 const DOMSelectors = {
     grid: document.querySelector(".movie-grid"),
@@ -34,6 +34,11 @@ const init = async function (){
         const response = await fetch(query);
         const data = await response.json();
         data.results.forEach((movie) => {
+          const genreArr = genres.forEach.filter((element) => {
+
+          })
+
+
             DOMSelectors.grid.insertAdjacentHTML("beforeend", `<div class="movie-card">
             <div class="movie-card-front">
               <img
@@ -65,5 +70,5 @@ const init = async function (){
     }
 }
 
-const genreArr = 
+
 init();
