@@ -209,7 +209,9 @@ var _genres = require("./genres.js");
 // }
 // getPkmn();
 const DOMSelectors = {
-  grid: document.querySelector(".movie-grid")
+  grid: document.querySelector(".movie-grid"),
+  searchForm: document.getElementById("search-form"),
+  searchArea: document.getElementById("search-area")
 };
 const key = "722a815252affd4774ebb49aa900cdb8";
 const query = "https://api.themoviedb.org/3/movie/550?api_key=722a815252affd4774ebb49aa900cdb8";

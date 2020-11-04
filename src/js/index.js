@@ -24,6 +24,8 @@ import { genres } from "./genres.js";
 
 const DOMSelectors = {
     grid: document.querySelector(".movie-grid"),
+    searchForm: document.getElementById("search-form"),
+    searchArea: document.getElementById("search-area"),
 };
 
 const key = `722a815252affd4774ebb49aa900cdb8`;
