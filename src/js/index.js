@@ -33,11 +33,18 @@ const init = async function (){
     try {
         const response = await fetch(query);
         const data = await response.json();
+        
         data.results.forEach((movie) => {
-          const genreArr = genres.forEach.filter((element) => {
-
-          })
-
+          let genreArr = [];
+          const addGenre = function () {
+            genres.forEach((element) => {
+              if (movie.genre_ids.includes(element.id)) {
+                genreArr.push(element.name);
+                return genreArr;
+              }
+            });
+          };
+          addGenre();
 
             DOMSelectors.grid.insertAdjacentHTML("beforeend", `<div class="movie-card">
             <div class="movie-card-front">

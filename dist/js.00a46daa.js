@@ -219,8 +219,18 @@ const init = async function init() {
     const response = await fetch(query);
     const data = await response.json();
     data.results.forEach(movie => {
-      const genreArr = _genres.genres.forEach.filter(element => {});
+      let genreArr = [];
 
+      const addGenre = function addGenre() {
+        _genres.genres.forEach(element => {
+          if (movie.genre_ids.includes(element.id)) {
+            genreArr.push(element.name);
+            return genreArr;
+          }
+        });
+      };
+
+      addGenre();
       DOMSelectors.grid.insertAdjacentHTML("beforeend", "<div class=\"movie-card\">\n            <div class=\"movie-card-front\">\n              <img\n                src=\"https://image.tmdb.org/t/p/w500/poster_path\"\n                alt=\"\"\n                class=\"poster\"\n              />\n            </div>\n            <div class=\"movie-card-back\">\n              <h3 class=\"movie-card-header\">".concat(movie.original_title, "</h3>\n              <div class=\"score-box\">\n                <p class=\"user-score\">Community Score</p>\n                <p class=\"user-score\">").concat(movie.vote_average, "</p>\n              </div>\n    \n              <div class=\"release-box\">\n                <p class=\"release-date\">Released</p>\n                <p class=\"release-date\">").concat(movie.release_date, "</p>\n              </div>\n    \n              <div class=\"movie-genres\">\n                <div>").concat(genreArr, "</div> \n              </div>\n            </div>\n          </div>"));
     });
   } catch (error) {
@@ -257,7 +267,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50232" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49986" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

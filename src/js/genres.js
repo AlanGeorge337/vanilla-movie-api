@@ -77,4 +77,4 @@ const genres = [
     },
   ];
   
-  export { genres };
+export { genres };
