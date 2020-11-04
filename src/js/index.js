@@ -22,16 +22,36 @@
 
 import { genres } from "./genres.js";
 
+////update variable for page?
+let pageNumber = 1;
+///input variable as a parameter?
+
+// next function updates the variable and passes into query.
+const nextPage = function (){
+  DOMSelectors.btnNext.addEventListener("click", function () {
+    pageNumber++;
+    init(pageNumber);
+    }
+  )
+}
+nextPage();
+
 const DOMSelectors = {
     grid: document.querySelector(".movie-grid"),
     searchForm: document.getElementById("search-form"),
     searchArea: document.getElementById("search-area"),
+    btnPrev: document.querySelector(".btn-prev"),
+    btnNext: document.querySelector(".btn-next"),
 };
 
-const key = `722a815252affd4774ebb49aa900cdb8`;
-const query = `https://api.themoviedb.org/3/movie/550?api_key=722a815252affd4774ebb49aa900cdb8`;
 
-const init = async function (){
+
+const init = async function (pageNumber){
+  DOMSelectors.grid.innerHTML = "";
+  const key = `722a815252affd4774ebb49aa900cdb8`;
+  const query = `https://api.themoviedb.org/3/movie/550?api_key=722a815252affd4774ebb49aa900cdb8`;
+
+
     try {
         const response = await fetch(query);
         const data = await response.json();
